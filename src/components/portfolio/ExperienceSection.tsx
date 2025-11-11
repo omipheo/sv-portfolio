@@ -6,25 +6,25 @@ import SectionHeader from "./SectionHeader";
 
 const experience = [
   {
-    role: "Software Developer",
-    company: "Upwork",
-    period: "January 2020 — Present",
-    type: "Freelance",
-    companyIcon: "fa6-brands:square-upwork",
+    role: "Junior Software Developer",
+    company: "WIX",
+    period: "February 2024 — May 2025",
+    type: "Full-time",
+    companyIcon: "simple-icons:wix",
     companyColor: "from-green-500 to-green-600",
-    description: "Delivered high-quality projects across diverse domains, including web and mobile applications, API development, and cloud integrations (AWS, GCP).",
+    description: "Built responsive and user-friendly web interfaces using HTML, CSS, JavaScript, and React, collaborating with designers and developers to enhance user experience and maintain clean, efficient code.",
     achievements: [
-      "Achieved Top-Rated status with a 91% job success score",
-      "Completed 10+ projects focusing on scalable solutions",
+      // "Achieved Top-Rated status with a 91% job success score",
+      // "Completed 10+ projects focusing on scalable solutions",
       "Consistently praised for skillfulness, quick learning, and strong communication",
       "Earned repeated engagements through reliability and expertise"
     ],
-    technologies: ["JavaScript", "Python", "Node.js", "AWS", "GCP", "OpenAI API", "LangChain"]
+    technologies: ["React", "Python", "Node.js", "AWS", "GCP", "OpenAI API", "LangChain"]
   },
   {
     role: "HIMS Master Trainer / PACS Specialist",
     company: "Public Health Organization, Islamabad",
-    period: "July 2019 — Present",
+    period: "July 2023 — December 2023",
     type: "Full-time",
     companyColor: "from-blue-500 to-blue-600",
     companyIcon: "mdi:hospital-building",
@@ -266,7 +266,7 @@ export default function ExperienceSection() {
               whileHover={{ scale: 1.05, y: -5 }}
               className="group p-6 md:p-8 rounded-xl md:rounded-2xl bg-gradient-to-br from-blue-50/50 to-blue-100/30 dark:from-blue-950/20 dark:to-blue-900/10 border border-blue-200/30 dark:border-blue-800/20 hover:border-blue-300/50 dark:hover:border-blue-600/30 transition-all duration-500"
             >
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">5+</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">2+</div>
               <div className="text-gray-600 dark:text-gray-400 font-medium text-base md:text-lg">Years Experience</div>
             </motion.div>
 
@@ -274,7 +274,7 @@ export default function ExperienceSection() {
               whileHover={{ scale: 1.05, y: -5 }}
               className="group p-6 md:p-8 rounded-xl md:rounded-2xl bg-gradient-to-br from-green-50/50 to-green-100/30 dark:from-green-950/20 dark:to-green-900/10 border border-green-200/30 dark:border-green-800/20 hover:border-green-300/50 dark:hover:border-green-600/30 transition-all duration-500"
             >
-              <div className="text-4xl md:text-5xl font-bold text-green-600 dark:text-green-400 mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">50+</div>
+              <div className="text-4xl md:text-5xl font-bold text-green-600 dark:text-green-400 mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">10+</div>
               <div className="text-gray-600 dark:text-gray-400 font-medium text-base md:text-lg">Projects Completed</div>
             </motion.div>
 
@@ -282,7 +282,7 @@ export default function ExperienceSection() {
               whileHover={{ scale: 1.05, y: -5 }}
               className="group p-6 md:p-8 rounded-xl md:rounded-2xl bg-gradient-to-br from-purple-50/50 to-purple-100/30 dark:from-purple-950/20 dark:to-purple-900/10 border border-purple-200/30 dark:border-purple-800/20 hover:border-purple-300/50 dark:hover:border-purple-600/30 transition-all duration-500 sm:col-span-2 lg:col-span-1"
             >
-              <div className="text-4xl md:text-5xl font-bold text-purple-600 dark:text-purple-400 mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">91%</div>
+              <div className="text-4xl md:text-5xl font-bold text-purple-600 dark:text-purple-400 mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">95%</div>
               <div className="text-gray-600 dark:text-gray-400 font-medium text-base md:text-lg">Success Rate</div>
             </motion.div>
           </div>

@@ -115,7 +115,7 @@ export default function OverviewSection() {
                       A passionate <span className="font-bold text-blue-600 dark:text-blue-400">Full Stack Developer</span> and
                       <span className="font-bold text-purple-600 dark:text-purple-400">
                         &nbsp; AI enthusiast</span> with
-                      <span className="font-bold text-green-600 dark:text-green-400"> 5+ years</span> of experience crafting
+                      <span className="font-bold text-green-600 dark:text-green-400"> 2+ years</span> of experience crafting
                       digital experiences that users love.
                     </p>
                   </div>
@@ -168,21 +168,20 @@ export default function OverviewSection() {
                 >
                   <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
                     <div className="p-2 md:p-3 bg-blue-500 rounded-lg md:rounded-xl shadow-lg">
-                      <Icon icon="solar:code-bold" className="text-white w-5 md:w-6 h-5 md:h-6" width={24} height={24} />
+                      <Icon icon="simple-icons:wix" className="text-white w-5 md:w-6 h-5 md:h-6" width={24} height={24} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 dark:text-white text-base md:text-lg">Software Developer</h4>
-                      <p className="text-blue-600 dark:text-blue-400 font-medium text-sm md:text-base">Upwork Freelancer</p>
-                      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-1">2020 — Present</p>
+                      <h4 className="font-bold text-gray-900 dark:text-white text-base md:text-lg">Junior Software Developer</h4>
+                      {/* <p className="text-blue-600 dark:text-blue-400 font-medium text-sm md:text-base">Upwork Freelancer</p> */}
+                      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-1">2024 — 2025</p>
                     </div>
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 text-xs md:text-sm leading-relaxed mb-2 md:mb-3 flex-1">
-                    Delivering high-quality projects across diverse domains, specializing in web applications,
-                    API development, and cloud integrations.
+                    Built responsive and user-friendly web interfaces using HTML, CSS, JavaScript, and React, collaborating with designers and developers to enhance user experience and maintain clean, efficient code.
                   </p>
                   <div className="flex items-center gap-2 text-xs md:text-sm mt-auto">
-                    <Icon icon="solar:star-bold" className="text-yellow-500 w-3 md:w-4 h-3 md:h-4" width={16} height={16} />
-                    <span className="font-semibold text-green-600 dark:text-green-400">Top Rated • 91% Success Score</span>
+                    {/* <Icon icon="solar:star-bold" className="text-yellow-500 w-3 md:w-4 h-3 md:h-4" width={16} height={16} /> */}
+                    {/* <span className="font-semibold text-green-600 dark:text-green-400">Top Rated • 91% Success Score</span> */}
                   </div>
                 </motion.div>
 
@@ -198,7 +197,7 @@ export default function OverviewSection() {
                     <div>
                       <h4 className="font-bold text-gray-900 dark:text-white text-base md:text-lg">HIMS Master Trainer</h4>
                       <p className="text-green-600 dark:text-green-400 font-medium text-sm md:text-base">Public Health Organization</p>
-                      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-1">2019 — Present</p>
+                      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-1">2023 — 2023</p>
                     </div>
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 text-xs md:text-sm leading-relaxed mb-2 md:mb-3 flex-1">
@@ -271,9 +270,10 @@ export default function OverviewSection() {
               </h4>
               <div className="space-y-4">
                 {[
-                  { icon: "solar:star-bold", text: "Top Rated on Upwork", color: "text-yellow-600" },
+                  // { icon: "solar:star-bold", text: "Top Rated on Upwork", color: "text-yellow-600" },
                   { icon: "solar:cpu-bolt-bold-duotone", text: "Expert in AI Integration", color: "text-blue-600" },
-                  { icon: "solar:code-square-bold", text: "50+ Projects Delivered", color: "text-green-600" },
+                  { icon: "solar:code-square-bold", text: "10+ Projects Delivered", color: "text-green-600" },
+                  // { icon: "", text: "", color: "text-yellow-600" }
                 ].map((achievement, index) => (
                   <motion.div
                     key={index}
