@@ -3,10 +3,20 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
+interface Particle {
+  left: number;
+  top: number;
+  duration: number;
+  delay: number;
+}
+
 export default function Background() {
   const [isMobile, setIsMobile] = useState(false);
+  const [particles, setParticles] = useState<Particle[]>([]);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768 || 'ontouchstart' in window);
     };
@@ -16,8 +26,22 @@ export default function Background() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Reduce particle count on mobile
-  const particleCount = isMobile ? 5 : 12;
+  useEffect(() => {
+    if (!isMounted) return;
+    
+    // Reduce particle count on mobile
+    const particleCount = isMobile ? 5 : 12;
+    
+    // Generate particle positions and animation properties once on client
+    const generatedParticles: Particle[] = Array.from({ length: particleCount }, () => ({
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      duration: Math.random() * 2 + 4,
+      delay: Math.random() * 3,
+    }));
+    
+    setParticles(generatedParticles);
+  }, [isMobile, isMounted]);
 
   // Reduce animation complexity on mobile
   const animationConfig = isMobile
@@ -87,13 +111,13 @@ export default function Background() {
       )}
 
       {/* Reduced floating particles */}
-      {Array.from({ length: particleCount }).map((_, i) => (
+      {isMounted && particles.map((particle, i) => (
         <motion.div
           key={i}
           className="absolute w-1 h-1 bg-blue-400/60 rounded-full"
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
+            left: `${particle.left}%`,
+            top: `${particle.top}%`,
             willChange: 'transform, opacity',
           }}
           animate={{
@@ -101,9 +125,9 @@ export default function Background() {
             opacity: [0, 1, 0],
           }}
           transition={{
-            duration: Math.random() * 2 + 4,
+            duration: particle.duration,
             repeat: Infinity,
-            delay: Math.random() * 3,
+            delay: particle.delay,
             ease: "linear",
           }}
         />

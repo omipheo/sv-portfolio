@@ -3,19 +3,34 @@
 import { usePathname, useSearchParams } from "next/navigation"
 import posthog from "posthog-js"
 import { PostHogProvider as PHProvider, usePostHog } from "posthog-js/react"
-import { Suspense, useEffect } from "react"
+import { Suspense, useEffect, useState } from "react"
 
 export function PostHogProvider({ children }: { children: React.ReactNode }) {
+  const [isMounted, setIsMounted] = useState(false)
+  const [shouldUsePostHog, setShouldUsePostHog] = useState(false)
+
   useEffect(() => {
-    posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
-      api_host: "/ingest",
-      ui_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
-      capture_pageview: false, // We capture pageviews manually
-      capture_pageleave: true, // Enable pageleave capture
-      capture_exceptions: true, // This enables capturing exceptions using Error Tracking, set to false if you don't want this
-      debug: process.env.NODE_ENV === "development",
-    })
+    setIsMounted(true)
+    const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY
+    
+    if (posthogKey) {
+      setShouldUsePostHog(true)
+      posthog.init(posthogKey, {
+        api_host: "/ingest",
+        ui_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+        capture_pageview: false, // We capture pageviews manually
+        capture_pageleave: true, // Enable pageleave capture
+        capture_exceptions: true, // This enables capturing exceptions using Error Tracking, set to false if you don't want this
+        debug: process.env.NODE_ENV === "development",
+      })
+    }
   }, [])
+
+  // Always render children during SSR and initial client render to avoid hydration mismatch
+  // PostHog will be initialized after mount if the key is available
+  if (!isMounted || !shouldUsePostHog) {
+    return <>{children}</>
+  }
 
   return (
     <PHProvider client={posthog}>

@@ -183,7 +183,6 @@ portfolio/
 │   │   ├── portfolio/          # Portfolio-specific components
 │   │   │   ├── AboutSection.tsx
 │   │   │   ├── Background.tsx
-│   │   │   ├── CertificationsSection.tsx
 │   │   │   ├── ContactSection.tsx
 │   │   │   ├── ExperienceSection.tsx
 │   │   │   ├── Footer.tsx
@@ -193,7 +192,6 @@ portfolio/
 │   │   │   ├── ProjectsSection.tsx
 │   │   │   ├── SectionHeader.tsx
 │   │   │   ├── TechStackSection.tsx
-│   │   │   ├── TestimonialsSection.tsx
 │   │   │   ├── TypewriterRole.tsx
 │   │   │   └── index.ts        # Component exports
 │   │   ├── AnimatedBackground.tsx
@@ -206,7 +204,7 @@ portfolio/
 │   └── utils.ts               # Utility functions
 ├── public/
 │   ├── certificates/          # Certificate images
-│   ├── CV.pdf                # Resume/CV file
+│   ├── Serhii_CV.pdf                # Resume/CV file
 │   ├── globe.svg             # SVG icons
 │   ├── next.svg
 │   ├── vercel.svg

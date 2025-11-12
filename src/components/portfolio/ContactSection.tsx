@@ -28,7 +28,7 @@ export default function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
-
+    console.log(formData);
     try {
       // EmailJS configuration
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
@@ -36,14 +36,15 @@ export default function ContactSection() {
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
 
       // Send email using EmailJS
+      // Template variables must match exactly: {{name}}, {{email}}, {{message}}
       const result = await emailjs.send(
         serviceId,
         templateId,
         {
-          from_name: formData.name,
-          from_email: formData.email,
+          name: formData.name,
+          email: formData.email,
           message: formData.message,
-          to_email: 'lightify6@gmail.com', // Your email
+          to_email: 'omipheo@gmail.com', // Your email
         },
         publicKey
       );
